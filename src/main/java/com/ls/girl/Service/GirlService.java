@@ -16,4 +16,5 @@ public interface GirlService {
     List<Girl> ageList(Integer age,Integer age2);
     List<Girl> nameList(String name);
     void insertTow();
+    void getAge(Integer id) throws Exception;
 }

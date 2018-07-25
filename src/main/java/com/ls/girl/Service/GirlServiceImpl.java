@@ -1,7 +1,9 @@
 package com.ls.girl.Service;
 
+import com.ls.girl.Exception.GirlException;
 import com.ls.girl.Model.Girl;
 import com.ls.girl.Repository.GirlRepository;
+import com.ls.girl.enums.ResultEnum;
 import org.apache.el.stream.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -63,6 +65,16 @@ public class GirlServiceImpl implements GirlService{
         girlRepository.save(girl1);
         Girl girl2 = new Girl(14,"pppppppppppppppppp",555);
         girlRepository.save(girl2);
+    }
+
+    @Override
+    public void getAge(Integer id) throws Exception{
+        Girl girl = girlRepository.findOne(id);
+        Integer age = girl.getAge();
+        if(age<10)
+            throw new GirlException(ResultEnum.PRIMARY_SCHOOL);
+        else if(age>10&&age<16)
+            throw new GirlException(ResultEnum.MIDDLE_SCHOOL);
     }
 
 }
