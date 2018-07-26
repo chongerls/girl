@@ -12,6 +12,7 @@ killTomcat(){
 }
 
 cd $PROJ_PATH/girl
+echo `pwd`
 mvn clean install
 
 killTomcat
