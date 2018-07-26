@@ -32,7 +32,7 @@ public class GirlController {
         for(Girl girl : girls){
             list.add(girl);
         }
-        logger.info("getGrilsList:获取女生列表成功～～～");
+        logger.info("******************getGrilsList:获取女生列表成功******************");
        return list;
     }
     //创建一个女生
