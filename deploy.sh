@@ -18,12 +18,12 @@ killTomcat
 
 rm -rf $TOMCAT_APP_PATH/webapps/ROOT
 rm -f $TOMCAT_APP_PATH/webapps/ROOT.war
-rm -f $TOMCAT_APP_PATH/webapps/girl.war
+rm -f $TOMCAT_APP_PATH/webapps/*.war
 
-cp $PROJ_PATH/girl/target/girl.war $TOMCAT_APP_PATH/webapps/
+cp $PROJ_PATH/girl/target/*.war $TOMCAT_APP_PATH/webapps/
 
 cd $TOMCAT_APP_PATH/webapps/
-mv gril.war ROOT.war
+mv *.war ROOT.war
 
 cd $TOMCAT_APP_PATH/
 sh bin/startup.sh
