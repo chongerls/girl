@@ -1,11 +1,16 @@
-package com.ls.zebraspringboot.entity;
+package com.ls.girl.Model;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Create By lishan10 on 2018/7/26
  */
+@Entity
+@Table(name = "userEntity")
 public class UserEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String tel;
@@ -13,6 +18,18 @@ public class UserEntity {
     private String alias;
     private  int role;
     private Date updateTime;
+
+    public UserEntity() {
+    }
+
+    public UserEntity(String name, String tel, String email, String alias, int role, Date updateTime) {
+        this.name = name;
+        this.tel = tel;
+        this.email = email;
+        this.alias = alias;
+        this.role = role;
+        this.updateTime = updateTime;
+    }
 
     public int getId() {
         return id;
